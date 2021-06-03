@@ -1,0 +1,60 @@
+body {
+  justify-content: center;
+}
+.page {
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+.heading {
+  font-size: 25px;
+}
+.para {
+  font-family: sans-serif;
+  font-size: 15px;
+  justify-content: center;
+  text-align: center;
+  color: gray;
+}
+.flex-container {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  margin: 20px;
+}
+.flex-container > div {
+  background-color: gray;
+  color: white;
+  justify-content: center;
+  width: 250px;
+  font-size: 15px;
+  margin: 5px;
+  padding: 5px 15px 5px 15px;
+}
+.flex-container2 {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  margin: 50px;
+  margin-top: 20px;
+}
+.flex-container2 > div {
+  color: gray;
+  justify-content: center;
+  text-align: justify;
+  font-size: 15px;
+  padding: 0 5px 5px 5px;
+  margin: 10px;
+  border: 1px solid black;
+}
+.flex-container2 > div > div {
+  color: gray;
+  font-weight: bold;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  width: 100px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin: 20px auto;
+}
