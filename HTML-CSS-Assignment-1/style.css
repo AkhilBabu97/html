@@ -1,0 +1,124 @@
+body {
+  background-color: #c2c2c2;
+}
+.page {
+  background-color: #9f9184;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+.heading {
+  font-size: 75px;
+  color: gray;
+  margin-top: 50px;
+}
+.ul {
+  list-style-type: none;
+  margin: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+.ul > li {
+  float: left;
+}
+.ul > li a {
+  font-size: 20px;
+  margin-right: 20px;
+  display: block;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.searchbox {
+  float: right;
+  font-size: 20px;
+  padding: 14px 16px;
+}
+.searchbox > i {
+  color: gray;
+}
+.flex1 {
+  display: flex;
+  margin: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.flex2 {
+  display: flex;
+  margin: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.flex2 > div {
+  background-color: white;
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+  text-align: justify;
+}
+.imagegrid {
+  overflow: hidden;
+  display: flex;
+  background-color: white;
+  margin: 20px 50px;
+  justify-content: center;
+}
+.column {
+  display: flex;
+  background-color: white;
+  float: left;
+  width: 100%;
+}
+.column img {
+  margin: 5px;
+}
+.row:after {
+  content: "";
+
+  display: table;
+  clear: both;
+}
+.text {
+  float: right;
+  justify-content: center;
+  margin-left: 30px;
+}
+.text > h3 {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: left;
+}
+.text > p {
+  font-size: 15px;
+  text-align: justify;
+  justify-content: center;
+  margin-right: 15px;
+}
+.ftr {
+  list-style-type: none;
+  margin: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+.ftr > li {
+  float: left;
+}
+.ftr > li a {
+  font-size: 15px;
+  margin-right: 10px;
+  display: block;
+  color: gray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
