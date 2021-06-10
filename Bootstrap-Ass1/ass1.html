@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Assignment 1 bootstrap</title>
     <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
+      rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"
     />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
 
   <body style="background-color: #c2c2c2">
 
-    <div class="container p-4 my-4 bg-secondary text-white">
-      <h2 class="text-center font-weight-bold text-dark">Logo</h2>
+    <div class="container bg-secondary">
+      <h1 class="text-center font-weight-bold text-dark">Logo</h1>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-dark">
             <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#">portfolio</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2 border-0" type="search" placeholder="Search..." aria-label="Search">
+                <button class="bg-white border-0 text-dark" type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
       </nav>
@@ -40,28 +39,28 @@
       
       <div class="card-deck mt-3">
         <div class="card">
-          <img class="card-img-top" src="image2.jpg" alt="Card image cap">
+          <img class="card-img-top img-thumbnail" src="image2.jpg" alt="Card image cap">
           <div class="card-body">
             <p class="card-text text-dark text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus consectetur nam, nobis quas saepe molestias recusandae. Voluptas ratione nihil nulla quo recusandae suscipit blanditiis autem obcaecati error odit quam cum deserunt nesciunt incidunt maxime ipsa, ex reiciendis provident fugit ut minima sed iste est! Rem quos aspernatur natus iure eligendi.</p>
             <p class="card-text text-dark text-right font-weight-bold">more...</p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="image3.jpg" alt="Card image cap">
+          <img class="card-img-top img-thumbnail" src="image3.jpg" alt="Card image cap">
           <div class="card-body">
             <p class="card-text text-dark text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus consectetur nam, nobis quas saepe molestias recusandae. Voluptas ratione nihil nulla quo recusandae suscipit blanditiis autem obcaecati error odit quam cum deserunt nesciunt incidunt maxime ipsa, ex reiciendis provident fugit ut minima sed iste est! Rem quos aspernatur natus iure eligendi.</p>
             <p class="card-text text-dark text-right font-weight-bold">more...</p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="image4.jpg" alt="Card image cap">
+          <img class="card-img-top img-thumbnail" src="image4.jpg" alt="Card image cap">
           <div class="card-body">
             <p class="card-text text-dark text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus consectetur nam, nobis quas saepe molestias recusandae. Voluptas ratione nihil nulla quo recusandae suscipit blanditiis autem obcaecati error odit quam cum deserunt nesciunt incidunt maxime ipsa, ex reiciendis provident fugit ut minima sed iste est! Rem quos aspernatur natus iure eligendi.</p>
             <p class="card-text text-dark text-right font-weight-bold">more...</p>
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="image5.jpg" alt="Card image cap">
+          <img class="card-img-top img-thumbnail" src="image5.jpg" alt="Card image cap">
           <div class="card-body">
             <p class="card-text text-dark text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus consectetur nam, nobis quas saepe molestias recusandae. Voluptas ratione nihil nulla quo recusandae suscipit blanditiis autem obcaecati error odit quam cum deserunt nesciunt incidunt maxime ipsa, ex reiciendis provident fugit ut minima sed iste est! Rem quos aspernatur natus iure eligendi.</p>
             <p class="card-text text-dark text-right font-weight-bold">more...</p>
@@ -72,32 +71,32 @@
         <div class="row">
           <div class="col-md-4">
             <div class="row mt-3">
-              <div class="col"><img src="image2.jpg" class="img-fluid"></div>
-              <div class="col"><img src="image3.jpg" class="img-fluid"></div>
+              <div class="col"><img src="image2.jpg" class="img-fluid img-thumbnail"></div>
+              <div class="col"><img src="image3.jpg" class="img-fluid img-thumbnail"></div>
               <div class="w-100"></div>
-              <div class="col mt-2"><img src="image4.jpg" class="img-fluid"></div>
-              <div class="col mt-2"><img src="image5.jpg" class="img-fluid"></div>
+              <div class="col"><img src="image4.jpg" class="img-fluid img-thumbnail"></div>
+              <div class="col"><img src="image5.jpg" class="img-fluid img-thumbnail"></div>
             </div>
           </div>
           <div class="col-md-8 ">
             <h2 class="font-weight-bold text-dark text-left mt-2 ">Welcome to Site!</h2>
-            <p class="text-dark text-justify mr-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio doloribus, consectetur laudantium sequi dolor a enim temporibus officiis molestiae at vitae illum earum! Tenetur, necessitatibus. Explicabo mollitia adipisci quasi excepturi ut dolore nisi, similique assumenda laboriosam doloribus totam optio aliquid labore, minus odio? Nobis ex illum id at tempora consectetur rem eum vero fugiat tempore sunt nihil amet maxime ratione nemo, autem debitis earum quidem nesciunt dolores enim cupiditate iure. Consequuntur molestiae magnam, officiis soluta ipsam qui debitis quasi id repellendus facere nobis nostrum ut vel fuga consectetur earum, totam ullam repellat, quod distinctio quas aperiam placeat. Distinctio, repellat!</p>
+            <p class="text-dark text-justify mr-3 ml-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis odio doloribus, consectetur laudantium sequi dolor a enim temporibus officiis molestiae at vitae illum earum! Tenetur, necessitatibus. Explicabo mollitia adipisci quasi excepturi ut dolore nisi, similique assumenda laboriosam doloribus totam optio aliquid labore, minus odio? Nobis ex illum id at tempora consectetur rem eum vero fugiat tempore sunt nihil amet maxime ratione nemo, autem debitis earum quidem nesciunt dolores enim cupiditate iure. Consequuntur molestiae magnam, officiis soluta ipsam qui debitis quasi id repellendus facere nobis nostrum ut vel fuga consectetur earum, totam ullam repellat, quod distinctio quas aperiam placeat. Distinctio, repellat!</p>
             <p class="text-dark text-right font-weight-bold">more...</p>
           </div>
         </div>
       </div>
       <!--footer-->
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light mt-2">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mt-2 mb-4">
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-dark">
             <li class="nav-item"><a class="nav-link" href="#">Terms of Service</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Privacy Policy</a></li>
             <li class="nav-item"><a class="nav-link" href="#">&copy;2009 seamless report</a></li> 
           </ul>  
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto text-dark">
             <li class="nav-item "><a class="nav-link" href="#">Contact</a></li>
             <li class="nav-item "><a class="nav-link" href="#">About Us</a></li>
             <li class="nav-item "><a class="nav-link" href="#">Careers</a></li>
