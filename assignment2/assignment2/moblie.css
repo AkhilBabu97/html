@@ -1,0 +1,92 @@
+@media screen and (min-width: 280px ) and (max-width :600px){
+header{
+    position: relative;
+}
+
+ nav{
+        margin-left: 3%;
+        margin-right: 3%;
+        display: flex;
+        flex-direction: column;    
+}
+.menu-btn{
+    display: block;
+    width: 94%;
+    margin: 1px 3%;
+    padding: 4px;
+    background-color: #959599;
+}
+nav {
+    transform: translateX(-110%);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#click:checked ~nav{
+    transform: translateX(0%);
+}
+#click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+}
+
+nav button{
+    width: 50%;
+    padding: 10px;
+    margin: 0px;
+    text-align: left;
+    padding-left: 25px;   
+}
+nav button:hover{
+    background-color: #f73e3e;
+    cursor: pointer;
+}
+section{
+    position: absolute;
+    top: 130px;
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+    z-index: -1;
+}
+.box{
+    width: 100%;
+    margin: 5px 0px;
+}
+section img{
+    width: 100%;
+}
+}
+
+@media screen and (min-width: 768px ) and (max-width :1023px){
+
+nav button {      
+    padding: 10px 27px;
+}
+.box{
+    margin: 10px;
+}
+section button {
+    position: absolute;
+    bottom: 5%;
+    right: 30%;
+}
+section h5{
+    margin: 6px;
+    padding: 6px;
+    background-color: aqua;
+    color: white;
+}
+section img{
+    width: 100%;
+    height: 190px;
+}
+}
+
+
+@media screen and (min-width: 1024px ) and (max-width :1100px){
+ nav button {      
+    padding: 10px 46px;
+}
+
+}
+
