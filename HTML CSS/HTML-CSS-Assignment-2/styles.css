@@ -1,0 +1,121 @@
+body {
+  justify-content: center;
+}
+
+.page {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.heading {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.para {
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: gray;
+  margin: 30px;
+}
+
+.ul {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  margin: 30px 50px;
+}
+
+.ul > li {
+  list-style-type: none;
+  background-color: gray;
+  justify-content: center;
+  text-align: center;
+  width: 250px;
+  font-size: 20px;
+  margin: 5px;
+  padding: 10px 15px;
+}
+
+.ul > li:hover {
+  color: black;
+  background-color: red;
+}
+
+.ul > li a {
+  text-decoration: none;
+  color: white;
+}
+
+.ul > li i {
+  color: black;
+  font-size: 20px;
+}
+
+.flex {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  margin: 50px;
+  margin-top: 20px;
+}
+
+.flex > div {
+  color: gray;
+  justify-content: center;
+  text-align: justify;
+  padding: 0 5px 5px 5px;
+  margin: 5px 10px;
+  border: 1px solid black;
+}
+
+.datetime {
+  color: white;
+  background-color: lightblue;
+
+  text-align: left;
+  font-size: 20px;
+  margin: 5px 20px;
+}
+
+.datetime > p {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.datetime > i {
+  color: white;
+}
+
+.flex-heading {
+  text-align: left;
+  font-size: 30px;
+  margin: 5px 20px;
+}
+
+.flex-para {
+  font-size: 20px;
+  justify-content: center;
+  text-align: justify;
+  margin: 5px 20px;
+}
+
+.read {
+  padding: 5px 10px 5px 10px;
+  width: 100px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+.read a {
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+  text-align: center;
+}
