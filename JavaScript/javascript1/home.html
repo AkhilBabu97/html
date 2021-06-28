@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questions and Answers</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
+    <script src="./main.js" defer></script> 
+
+</head>
+<body>
+    <h1>Flash Cards</h1>
+    <button id="addques"> Add Question</button>
+
+    <div id="qform" class="qform-invisible">
+    
+    <form id="quesnans" action="" >
+        <div>
+        <label for="question"> <strong>Question</strong> <button id="font-btn"> <i class="fas fa-window-close"></i></button></label>
+        <br>
+        <textarea name="question" cols="30" rows="5"  ></textarea>
+        <br>
+        <label for="choice"><strong>Question Category</strong></label>  
+        <select name="choice" >
+            <option value="Technology">Technology</option>
+            <option value="Sports">Sports</option>
+            <option value="GeneralKnowledge">General knowledge</option>
+            <option value="Other">Other</option>
+        </select>
+        <br>
+        <label for="answer"> <strong>Answer</strong></label><br>
+        <textarea name="question" cols="30" rows="7"  ></textarea><br>
+        <input id="save" type="submit" value="Save" >
+        <input id="clear" type="button" value="Clear">
+        </div>
+    </form>
+    </div>
+    <ul id="list">
+        <div class="lists">
+
+        </div>
+        </ul>
+
+</body>
+</html>
