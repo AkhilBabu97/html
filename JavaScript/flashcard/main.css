@@ -1,0 +1,81 @@
+
+body {
+  background: whitesmoke;
+  color: black;
+}
+.showBtn {
+  border-color: orange;
+  color: orange;
+  background: transparent;
+}
+.showBtn:hover {
+  background: orange;
+  color: black;
+}
+
+.questionCard {
+  display: none;
+  position: relative;
+  background: transparent;
+  border-color: orange;
+}
+
+
+textarea {
+  border-radius: 0.25rem;
+  border-color: orange;
+}
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 2%;
+  font-size: 2rem;
+  color: orange;
+  cursor: pointer;
+}
+.closeBtn:hover {
+  color: green;
+}
+.submitBtn {
+  border: 0.2rem solid green;
+  color: green;
+  background: transparent;
+}
+.submitBtn:hover {
+  background: green;
+  color: whitesmoke;
+}
+.clearBtn{
+  border: 0.2rem solid gray;
+  float: right;
+  color: gray;
+  background: transparent;
+}
+.clearBtn:hover{
+  background: gray;
+  color: whitesmoke;
+}
+.editFlashcard {
+  border: 0.2rem solid green;
+  color: green;
+  background: transparent;
+}
+.editFlashcard:hover {
+  background: green;
+  color: black;
+}
+.deleteFlashcard {
+  border: 0.2rem solid orange;
+  color: orange;
+  background: transparent;
+}
+.deleteFlashcard:hover {
+  background: orange;
+  color: black;
+}
+.answer {
+  display: none;
+}
+.showItem {
+  display: block;
+}
