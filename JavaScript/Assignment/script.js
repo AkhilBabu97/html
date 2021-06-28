@@ -4,9 +4,9 @@ const question = document.getElementById("question");
 const answer = document.getElementById("answer");
 let contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
-contentArray.forEach(divMaker);
+contentArray.forEach(flashcardDiv);
 
-function divMaker(text){
+function flashcardDiv(text){
   var div = document.createElement("div");
   var h2_question = document.createElement('h2');
   var h2_answer = document.createElement('h2');
@@ -21,18 +21,8 @@ function divMaker(text){
   h2_answer.setAttribute("style", "text-align:left; display:none");
   h2_answer.innerHTML = text.my_answer;
 
-  button_edit.setAttribute("style","padding: 5px")
-  button_edit.innerHTML="Edit";
-
-  button_delete.setAttribute("style","padding: 5px")
-  button_delete.innerHTML="Delete"
-  
-
   div.appendChild(h2_question);
   div.appendChild(h2_answer);
-
-  if(h2_answer.length<10)
-    alert("Please enter more than 10 characters");
 
   div.addEventListener("click", function(){
     if(h2_answer.style.display == "none")
@@ -49,15 +39,21 @@ function addFlashcard(){
     'my_question' : question.value,
     'my_answer'  : answer.value
   }
-  if(question.value.length<10)
+  if(question.value.length<10){
     alert('Please Enter more than 10 characters');
-  if(answer.value.length<10)
-    alert('Please Enter more than 10 characters');
-  contentArray.push(flashcard_info);
-  localStorage.setItem('items', JSON.stringify(contentArray));
-  divMaker(contentArray[contentArray.length - 1]);
-  question.value = '';
-  answer.value = '';
+  }
+  else{
+    if(answer.value.length<10)
+      alert('Please Enter more than 10 characters');
+    else{
+      contentArray.push(flashcard_info);
+      localStorage.setItem('items', JSON.stringify(contentArray));
+      flashcardDiv(contentArray[contentArray.length - 1]);
+      question.value = '';
+      answer.value = '';
+    }
+  }
+  
 }
 
 function delFlashcards(){
