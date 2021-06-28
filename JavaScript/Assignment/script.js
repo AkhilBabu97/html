@@ -1,5 +1,5 @@
 const flashcards = document.getElementsByClassName("flashcards")[0];
-const createCard = document.getElementsByClassName("card")[0];
+const createCard = document.getElementsByClassName("create-card")[0];
 const question = document.getElementById("question");
 const answer = document.getElementById("answer");
 let contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
@@ -10,17 +10,29 @@ function divMaker(text){
   var div = document.createElement("div");
   var h2_question = document.createElement('h2');
   var h2_answer = document.createElement('h2');
+  var button_edit = document. createElement("button");
+  var button_delete = document. createElement("button");
 
   div.className = 'flashcard';
 
   h2_question.setAttribute("style", "border-top:1px solid red; padding: 15px; margin-top:30px");
   h2_question.innerHTML = text.my_question;
 
-  h2_answer.setAttribute("style", "text-align:center; display:none; color:red");
+  h2_answer.setAttribute("style", "text-align:left; display:none");
   h2_answer.innerHTML = text.my_answer;
+
+  button_edit.setAttribute("style","padding: 5px")
+  button_edit.innerHTML="Edit";
+
+  button_delete.setAttribute("style","padding: 5px")
+  button_delete.innerHTML="Delete"
+  
 
   div.appendChild(h2_question);
   div.appendChild(h2_answer);
+
+  if(h2_answer.length<10)
+    alert("Please enter more than 10 characters");
 
   div.addEventListener("click", function(){
     if(h2_answer.style.display == "none")
@@ -37,7 +49,10 @@ function addFlashcard(){
     'my_question' : question.value,
     'my_answer'  : answer.value
   }
-
+  if(question.value.length<10)
+    alert('Please Enter more than 10 characters');
+  if(answer.value.length<10)
+    alert('Please Enter more than 10 characters');
   contentArray.push(flashcard_info);
   localStorage.setItem('items', JSON.stringify(contentArray));
   divMaker(contentArray[contentArray.length - 1]);
@@ -45,7 +60,16 @@ function addFlashcard(){
   answer.value = '';
 }
 
+function delFlashcards(){
+  localStorage.clear();
+  flashcards.innerHTML = '';
+  contentArray = [];
+}
+
 function showCreateCardBox(){
   createCard.style.display = "block";
 }
 
+function hideCreateCardBox(){
+  createCard.style.display = "none";
+}
