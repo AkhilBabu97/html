@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questions and Answers</title>
     <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Assignment1</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>  
+    <script src="script.js" defer></script> 
+
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <div class="nav">
-                <h1>Flashcards</h1>
-                <div>
-                    <button onclick="showCreateCardBox()">Add Question</button>
-                    <button onclick="delFlashcards()">Delete</button>
-                </div>
-            </div>
+    <h1>Flash Cards</h1>
+    <button id="addQuestion"> Add Question</button>
+
+    <div id="questionForm" class="questionForm-invisible">
+    
+    <form id="questionAnswer" action="" >
+        <div>
+        <label for="question"> <strong>Question</strong> <button id="font-btn"> <i class="fas fa-window-close"></i></button></label>
+        <br>
+        <textarea name="question" cols="30" rows="5"  ></textarea>
+        <br>
+        <label for="choice"><strong>category </strong></label>  
+        <select name="choice" >
+            <option value="Technology">Technology</option>
+            <option value="Sports">Sports</option>
+            <option value="Other">Other</option>
+        </select>
+        <br>
+        <label for="answer"> <strong>Answer</strong></label><br>
+        <textarea name="question" cols="30" rows="7"  ></textarea><br>
+        <input id="save" type="submit" value="Save" >
+        <input id="clear" type="button" value="Clear">
         </div>
-    </header>
-    <div class="container">
-        <div class="create-card">
-            <label for="question">Question</label>
-            <textarea id="question"></textarea>
-            <br>
-            <div class="dropdown">
-                <button class="dropbtn">Category</button>
-                <div class="dropdown-content">
-                    <button>Sports</button><br>
-                    <button>Technology</button><br>
-                    <button>Others</button><br>
-                </div>
-            </div>
-            <br>
-            <label for="answer">Answer</label>
-            <textarea id="answer"></textarea>
-            <div>
-                <button onclick="addFlashcard()">Save</button> <button onclick="hideCreateCardBox()">Close</button>
-            </div>
-        </div>
-        <div class="flashcards"></div>
+    </form>
     </div>
+    <ul id="list">
+        <div class="lists">
 
-    <script src="script.js"></script>
+        </div>
+        </ul>
+
 </body>
-
 </html>

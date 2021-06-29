@@ -1,71 +1,133 @@
-const flashcards = document.getElementsByClassName("flashcards")[0];
-const createCard = document.getElementsByClassName("create-card")[0];
-const question = document.getElementById("question");
-const answer = document.getElementById("answer");
-let contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+const addQuestion= document.getElementById('addQuestion');
+const formdiv=document.getElementById('questionForm');
+const save=document.getElementById('save');
+const clear=document.getElementById('clear');
+const texarea=document.querySelectorAll('textarea');
+const category=document.getElementsByTagName('select');
+const clsbtn=document.getElementById('font-btn');
+const form=document.getElementById('questionAnswer');
+const ulist=document.querySelector('.lists');
 
-contentArray.forEach(flashcardDiv);
 
-function flashcardDiv(text){
-  var div = document.createElement("div");
-  var h2_question = document.createElement('h2');
-  var h2_answer = document.createElement('h2');
-  var button_edit = document. createElement("button");
-  var button_delete = document. createElement("button");
 
-  div.className = 'flashcard';
 
-  h2_question.setAttribute("style", "border-top:1px solid red; padding: 15px; margin-top:30px");
-  h2_question.innerHTML = text.my_question;
 
-  h2_answer.setAttribute("style", "text-align:left; display:none");
-  h2_answer.innerHTML = text.my_answer;
+const arrqs=[];
 
-  div.appendChild(h2_question);
-  div.appendChild(h2_answer);
-
-  div.addEventListener("click", function(){
-    if(h2_answer.style.display == "none")
-      h2_answer.style.display = "block";
-    else
-      h2_answer.style.display = "none";
-  })
-
-  flashcards.appendChild(div);
+function preventdef(e){
+    e.preventDefault();
 }
 
-function addFlashcard(){
-  var flashcard_info = {
-    'my_question' : question.value,
-    'my_answer'  : answer.value
-  }
-  if(question.value.length<10){
-    alert('Please Enter more than 10 characters');
-  }
-  else{
-    if(answer.value.length<10)
-      alert('Please Enter more than 10 characters');
-    else{
-      contentArray.push(flashcard_info);
-      localStorage.setItem('items', JSON.stringify(contentArray));
-      flashcardDiv(contentArray[contentArray.length - 1]);
-      question.value = '';
-      answer.value = '';
+function closebtn(e){
+    preventdef(e);
+    clearButtonHandler();
+    addButtonHandler();
+}
+ 
+
+function validateform(e){
+
+    preventdef(e);
+    const quest=texarea[0].value;
+    const catg=category[0].value;
+    const ansr=texarea[1].value;
+
+
+    if (quest.trim()==''){
+    alert('Enter valid question');
+    return false;
+   }
+
+    if (ansr.trim()==''){
+    alert('Enter valid question');
+    return false;
     }
-  }
-  
+
+    if ( quest.length<10 ||  ansr.length<10){
+        alert('Input less than 10 characters');
+        return false;
+    }
+    if ((quest.trim()!=='' && quest.length>10) && (ansr.trim()!=='' && ansr.length>10)){
+        const ques ={
+            question: quest,
+            questioncategory:catg,
+            answer:ansr,
+        };
+        arrqs.push(ques);
+        console.log(arrqs);
+        addButtonHandler();
+        clearButtonHandler();
+        addlist(ques.question,ques.questioncategory,ques.answer);
+    return false;
+}
+    return;
+   
 }
 
-function delFlashcards(){
-  localStorage.clear();
-  flashcards.innerHTML = '';
-  contentArray = [];
+function addButtonHandler(){
+
+    formdiv.classList.toggle('questionForm-visible');
 }
 
-function showCreateCardBox(){
-  createCard.style.display = "block";
+function clearButtonHandler(){
+    for(const texareas of texarea){
+        texareas.value='';
+    }   
 }
 
-function hideCreateCardBox(){
-  createCard.style.display = "none";
+
+const addlist=(questi,catgr,anser)=>{
+    
+    const newelm=document.createElement('div');
+    newelm.className='div-item';
+    newelm.innerHTML=`
+    <li>
+    <div class='list-div'>
+    <h5>${catgr}</h5>
+    <h2>${questi}</h2>
+    <a href='' id='showNhide'> Show/Hide Answer</a><br>
+    <h3 id='ansr' class='questionForm-invisible'>${anser}</h3><br>
+    <button id="edit"> Edit</button>
+    <button id="delete"> Delete</button>
+    </div>
+    </li>
+    `;
+    ulist.append(newelm);
+
+
+
 }
+
+
+
+
+
+function saveButtonHandler(){
+    
+    const quest=texarea[0].value;
+    const catg=category[0].value;
+    const ansr=texarea[1].value;
+    
+    if ((quest.trim()!=='' && quest.length>10) && (ansr.trim()!=='' && ansr.length>10)){
+    const ques ={
+        question: quest,
+        questioncategory:catg,
+        answer:ansr,
+    };
+    arrqs.push(ques);
+    console.log(arrqs);
+    addButtonHandler();
+    clearButtonHandler();
+    
+}
+}
+
+
+
+addQuestion.addEventListener('click',addButtonHandler);
+
+clsbtn.addEventListener('click',closebtn);
+
+clear.addEventListener('click',clearButtonHandler);
+
+save.addEventListener('click',validateform);
