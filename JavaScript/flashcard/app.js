@@ -8,8 +8,7 @@ function eventListeners() {
     const questionInput = document.getElementById("questionInput");
     const answerInput = document.getElementById("answerInput");
     const questionList = document.getElementById("questionsList");
-    const textarea=document.querySelectorAll('textarea');
-
+    
     //let data = [];
     let id;
 
@@ -37,9 +36,6 @@ function eventListeners() {
         ui.hideQuestion(questionCard);
     });
 
-    clearBtn.addEventListener('click',function(){
-        ui.clearQuestion(questionCard);
-    });
 
     //add question
     form.addEventListener('submit', function (event) {
@@ -47,7 +43,7 @@ function eventListeners() {
 
         const questionValue = questionInput.value;
         const answerValue = answerInput.value;
-        const categoryValue = categoryInput.value;
+        
 
         if (questionValue.length < 10 || answerValue.length < 10) {
             alert('Please input more than 10 characters')
@@ -152,7 +148,6 @@ function UI() {
     }
 
     
-
     //clear fields
     UI.prototype.clearFields = function (question, answer) {
         questionInput.value = '';
@@ -163,6 +158,7 @@ function UI() {
 function Question(id, title, answer) {
     this.id = id;
     this.title = title;
+    
     this.answer = answer;
 }
 // dom event listener to run when content is loaded
