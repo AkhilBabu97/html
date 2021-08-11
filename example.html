@@ -1,0 +1,244 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+<div class="row">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Business Unit</h6><select class="form-control" id="businessUnitInput"></select>
+    </div>
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label-autocomplete"> Business Unit Lead</h6><input class="form-control border border-info" id="businessUnitLeadNameInput" type="text" placeholder="Choose a BU to fill in this field" disabled="disabled" />
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Program</h6><select class="form-control" id="programInput"></select>
+    </div>
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label-autocomplete"> Program Lead</h6><input class="form-control border border-info" id="programLeadNameInput" type="text" placeholder="Choose a Program to fill in this field" disabled="disabled" />
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Sub Program</h6><select class="form-control" id="subProgramInput"></select>
+    </div>
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label-autocomplete"> Sub Program Lead</h6><input class="form-control border border-info" id="subProgramLeadNameInput" type="text" placeholder="Choose a Sub Program to fill in this field" disabled="disabled" />
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Hiring Manager</h6><select class="form-control" id="hiringManagerInput"></select>
+    </div>
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label-autocomplete"> Skills</h6><input class="form-control border border-info" id="hiringManagerSkillsInput" type="text" placeholder="Choose a HM to fill in this field" disabled="disabled" />
+    </div>
+</div>
+<div class="card p-4 mt-3"></div>
+<div class="row">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Program Name</h6><select class="form-control" id="projectProgramNameInput">
+            <option val="">Choose a Program</option>
+        </select>
+    </div>
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label-autocomplete"> Program Lead</h6><input class="form-control border border-info" id="projectProgramLeadInput" type="text" placeholder="Choose a Program to fill in this field" disabled="disabled" />
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Project Name</h6><select class="form-control" id="projectNameInput"></select>
+    </div>
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label-autocomplete"> Project SPOC</h6><input class="form-control border border-info" id="projectSPOCInput" type="text" placeholder="Choose a SPOC to fill in this field" disabled="disabled" />
+    </div>
+</div>
+<div class="col-lg-6"></div>
+<div class="row" id="showIfForcastRequest" style="display: none"></div>
+<div class="col-lg-6"><button class="btn btn-outline-primary btn-sm mb-1" data-toggle="modal" data-target="#exampleModalLongNewForecastGroup" onClick="openNewForecastGroupModal()"><span data-feather="plus-circle"></span> Add New Forecast</button></div>
+<div class="card p-4" id="requestGeneralDetailsView"></div>
+<div class="row">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> SLT Member</h6><input class="form-control" id="sltMemberInput" type="text" placeholder="" value="Nagaraja Srivatsan" />
+    </div>
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> RDS LT</h6><input class="form-control" id="rdsLtInput" type="text" placeholder="" value="Jasmeet Sachdeva" />
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Job Title</h6><select class="form-control" id="jobTitleInput"></select>
+    </div>
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Job Country</h6><select class="form-control" id="jobCountryInput"></select>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted" style="display: none"> Similar Positions Requested</h6><input class="form-control" id="numberOfSimilarPositions" type="number" style="display: none" />
+        <h6 class="mt-2 text-muted control-label"> Skills</h6><select class="form-control" id="skillsInput" multiple="" style="height:226px; overflow-y: scroll;"></select><small class="text-muted" id="skillsUpdatedAccordingToHM">Use Ctrl+Click to select multiple skills.</small>
+    </div>
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Employee Type</h6><select class="form-control" id="employeeTypeInput"></select>
+        <div id="employeeTypeInputMsg"></div>
+        <h6 class="mt-3 text-muted control-label"> Total Base Salary Cost (in USD/Year)</h6><input class="form-control" id="totalBaseSalary" type="number" placeholder="$/Yr" value="0" />
+        <h6 class="mt-3 text-muted control-label"> Role Definition</h6><select class="form-control" id="roleDefinition" disabled="disabled">
+            <option value="">Choose a Role Definition</option>
+            <option value="Delivery">Delivery</option>
+            <option value="Production, Client Svs &amp; Supply Management">Production, Client Svs & Supply Management</option>
+            <option value="Deferrable" selected="selected">Deferrable</option>
+            <option value="GTM or Overhead">GTM or Overhead </option>
+        </select>
+    </div>
+</div>
+<div class="card p-4 mt-3" id="requestPPMDateDetailsView"></div>
+<div class="row">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> PPM Submitted Date</h6>
+    </div>
+    <div class="col-lg-6"><input class="form-control" id="ppmSubmittedDateInput" type="date" placeholder="PPM Submitted Date" /></div>
+</div>
+<div class="row mt-3 mb-3" id="requestDetailsView"></div>
+<div class="col-lg-12"></div>
+<div class="card p-4"></div>
+<div class="row">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> GTM</h6>
+    </div>
+    <div class="col-lg-4"><input id="gtmInput" type="checkbox" /></div>
+    <div class="col-lg-2">
+        <div id="gtmInputStatus"></div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Will a delay in hiring impact revenue/NNB/EBITDA and can this impact be quantified? If yes, please explain</h6>
+    </div>
+    <div class="col-lg-6"><textarea class="form-control" id="impactRevenueInput" placeholder="" rows="5"></textarea><small class="text-muted control-label"> Please write up a valid text, as this field is mandatory to be filled.</small></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Has there been a commitment to a customer/contractual requirement to fill this role? Will not filling the role have a demonstrable immediate impact to a customer relationship? If yes, please explain.</h6>
+    </div>
+    <div class="col-lg-6"><textarea class="form-control" id="commitmentInput" placeholder="" rows="5"></textarea><small class="text-muted control-label"> Please write up a valid text, as this field is mandatory to be filled.</small></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Capitalizable</h6>
+    </div>
+    <div class="col-lg-4"><input id="capitalizableInput" type="checkbox" /></div>
+    <div class="col-lg-2">
+        <div id="capitalizableInputStatus"></div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> If Capitalizable is Yes, Please explain</h6>
+    </div>
+    <div class="col-lg-6"><textarea class="form-control border border-secondary" id="capitalizableTrueInput" placeholder="" rows="5" disabled="disabled"></textarea><small class="text-muted control-label"> Please write up a valid text in case Capitalizable is Yes, as this field is mandatory to be filled.</small></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Is the role required from a regulatory or compliance perspective?</h6>
+    </div>
+    <div class="col-lg-4"><input id="complianceInput" type="checkbox" /></div>
+    <div class="col-lg-2">
+        <div id="complianceInputStatus"></div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> Is there a direct cost saving associated with the position? <br />If yes, please explain and include cost saving in USD.</h6>
+    </div>
+    <div class="col-lg-6"><textarea class="form-control" id="directCostSaving" placeholder="" rows="5"></textarea><small class="text-muted control-label"> Please write up a valid text, as this field is mandatory to be filled.</small></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Additional comments to support exception approval</h6>
+    </div>
+    <div class="col-lg-6"><textarea class="form-control" id="additionalCommentsInput" placeholder="" rows="5"></textarea></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Target Start Date</h6>
+    </div>
+    <div class="col-lg-6"><input class="form-control" id="targetStartDateInput" type="date" placeholder="Target Start Date" /></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted control-label"> New or Backfill</h6>
+    </div>
+    <div class="col-lg-6"><select class="form-control" id="newOrBackfillInput">
+            <option value="">Choose a Value </option>
+            <option value="New">New</option>
+            <option value="Backfill">Backfill </option>
+        </select></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> If BackFill, Please Provide Resource Name</h6>
+    </div>
+    <div class="col-lg-6"><input class="form-control border border-secondary" id="newOrBackfillResourceName" type="text" placeholder="" disabled="disabled" /></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Requsition Id</h6>
+    </div>
+    <div class="col-lg-6"><input class="form-control" id="reqIdInput" type="text" placeholder="" /></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Critical Resource</h6>
+    </div>
+    <div class="col-lg-4"><input id="isCriticalInput" type="checkbox" /></div>
+    <div class="col-lg-2">
+        <div id="isCriticalInputStatus"></div>
+    </div>
+</div>
+<div class="row mt-4" style="display: none">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Submitted as NEW</h6>
+    </div>
+    <div class="col-lg-4"><input id="submittedAsNewInput" type="checkbox" /></div>
+    <div class="col-lg-2">
+        <div id="submittedAsNewInputStatus"></div>
+    </div>
+</div>
+<div class="row mt-4" style="display: none">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Initiative Flag</h6>
+    </div>
+    <div class="col-lg-6"><input class="form-control" id="initiativeFlagInput" type="text" /></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted" id="conversionSavingsPlaceholder"> Conversion Savings (in USD)</h6>
+    </div>
+    <div class="col-lg-6"><input class="form-control" id="conversionSavingsInput" type="number" placeholder="$" /><small class="text-muted control-label" id="conversionSavingsPlaceholderForMsg" style="display: none"> Please enter a valid number, as this field is mandatory to be filled.</small></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Conversion Expense (Net of Capital)</h6>
+    </div>
+    <div class="col-lg-6"><input class="form-control" id="conversionExpenseInput" type="text" /></div>
+</div>
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <h6 class="mt-2 text-muted"> Offshoring Annual Savings</h6>
+    </div>
+    <div class="col-lg-6"><input class="form-control" id="offshoringAnnualSavingsInput" type="text" /></div>
+</div>
+<div class="row mt-3 mb-3" id="requestActionButtons"></div>
+<div class="col-lg-12"></div>
+<div class="row ml-1"><small class="text-muted"> Tip: Saving as Draft enables the option to delete the request later, as request once submitted cannot be deleted, but can be<strong> withdrawn.</strong><br /> Mandatory Field's are not required for request that will be saved as Draft.</small></div>
+<div class="col-lg-12"></div>
+<div class="row">
+    <div class="col-lg-12 mt-2"><button class="btn btn-outline-success btn-md" onClick="saveNewRequest('submitted')"> Submit</button><button class="ml-2 btn btn-outline-primary btn-md" onClick="saveNewRequest('draft')"> Save as Draft</button></div>
+</div>
+
+</div>
+</body>
+</html>
